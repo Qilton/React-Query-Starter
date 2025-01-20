@@ -4,18 +4,18 @@ import axios from 'axios'
 import {useInView} from 'react-intersection-observer'
 
 
-const InfiniteQueries = () => {
+const InfiniteQueries2 = () => {
     const { ref, inView } = useInView();
   const {data,isLoading, isError,error,  fetchNextPage,  hasNextPage, isFetchingNextPage} = useInfiniteQuery({
     queryKey: ['posts'],
     queryFn: ({ pageParam = 1 }) => {
       return axios.get(
-        `https://jsonplaceholder.typicode.com/posts/?_limit=4&_page=${pageParam}`
+        `https://jsonplaceholder.typicode.com/posts/?_limit=10&_page=${pageParam}`
       )
     },
     getNextPageParam: (lastPage, allPages) => {
-    
-      if (lastPage.data.length < 4) {
+      console.log(lastPage)
+      if (lastPage.data.length < 10) {
         return undefined
       }
       return allPages.length + 1
@@ -56,4 +56,4 @@ const InfiniteQueries = () => {
   )
 }
 
-export default InfiniteQueries
+export default InfiniteQueries2

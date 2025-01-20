@@ -9,7 +9,7 @@ const Posts = () => {
 
     const fetchPosts = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/posts");
+            const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
             setPosts(response.data);
         } catch (error) {
             setIsError(true);
@@ -39,7 +39,7 @@ const Posts = () => {
         </div>
     ))}
 </div>
-  )
+  ) 
 }
 
 export default Posts

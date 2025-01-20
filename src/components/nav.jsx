@@ -8,6 +8,7 @@ const nav = () => {
         <Link to='/posts' className='links'>Posts</Link>
         <Link to='/react-query-post' className='links'>RQPosts</Link>
         <Link to='/pagination' className='links'>Pagination</Link>
+        <Link to='/pagination2' className='links'>Pagination2</Link>
         <Link to='/infinite-queries' className='links'>Infinite Queries</Link>
         
     </div>
